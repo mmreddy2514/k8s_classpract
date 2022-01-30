@@ -3,16 +3,17 @@ kind: ReplicationController
 metadata:
   name: myjavaapp-rc
 spec:
-  replicas: 2
+  replicas: 3
+
   selector:
-      app: myjenkins
+      app: myjavaapp
   template:
     metadata:
       labels:
-        app: myjenkins
+        app: myjavaapp
     spec:
       containers:
-        - name: myjenkins-container
-          image: jenkins:2.60.3
+        - name: myjavaapp-container
+          image: manju416/myjavaapp15jan:1
           ports:
             - containerPort: 8080
